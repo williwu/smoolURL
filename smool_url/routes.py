@@ -25,6 +25,7 @@ def create():
     url = Url(long_url=long_url, short_url=short_url)
     db.session.add(url)
     db.session.commit()
+    
     return render_template('url_created.html', new_url=url.short_url)
 
 @shorturl.errorhandler(404)
