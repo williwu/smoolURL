@@ -3,8 +3,12 @@
 {% block body %}
 <div class="container">
     <h2 style="padding-top: 20px;">SmoolURL</h2>
-        <p style="padding-top: 10px;">You can now access with the new url at {{ url_for('shorturl.redirect_url', short_url=new_url, _external=True) }}</p>
-        <a style="padding: 0; margin: 0;" href="{{ url_for('shorturl.index') }}" class="btn btn-link">Back to Home</a>
-    </div>
+    <p style="padding-top: 10px;">You can now access with the new url at
+        <a href="{{ url_for('shorturl.redirect_url', short_url=new_url, _external=True) }}">
+            {{ url_for('shorturl.redirect_url', short_url=new_url, _external=True) }}
+        </a>
+    </p>
+    <a href="{{ url_for('shorturl.index') }}">Back to Home</a>
+</div>
 </div>
 {% endblock %}
